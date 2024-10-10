@@ -1,0 +1,185 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    transition: background-color 0.5s ease;
+}
+
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --button-bg: #28a745;
+    --button-text: white;
+}
+
+.dark-mode {
+    --bg-color: #2c2c2c;
+    --text-color: #f0f0f0;
+    --button-bg: #17a2b8;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+.container h1 {
+    color: var(--text-color);
+}
+
+input {
+    width: calc(100% - 70px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: darken(var(--button-bg), 10%);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.5s forwards;
+}
+
+li.completed {
+    text-decoration: line-through;
+    background-color: #d4edda;
+}
+
+li button {
+    background-color: #dc3545;
+}
+
+li button:hover {
+    background-color: #c82333;
+}
+
+.filters {
+    margin: 20px 0;
+}
+
+.filter {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.filter:hover {
+    background-color: #0056b3;
+}
+
+.filter.active {
+    background-color: #0056b3;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.progress-container {
+    margin: 20px 0;
+    background: #eee;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #28a745;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+#progress-percentage {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+#streaks {
+    margin-top: 20px;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+li.priority-today {
+    border-left: 4px solid red;
+}
+
+li.priority-upcoming {
+    border-left: 4px solid orange;
+}
+
+button#voice-command {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
